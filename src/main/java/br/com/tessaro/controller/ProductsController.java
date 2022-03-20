@@ -24,13 +24,19 @@ import br.com.tessaro.model.dto.ProductDTO;
 import br.com.tessaro.service.impl.ProductsServiceImpl;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("api/v1/products")
 public class ProductsController {
 	
 	private Logger logger = LoggerFactory.getLogger(ProductsServiceImpl.class);
 	
 	@Autowired
 	private ProductsServiceImpl productsService;
+	
+//	private final ProductsServiceImpl productsService;
+//	
+//	public ProductsController(ProductsServiceImpl productsService) {
+//		this.productsService = productsService;
+//	}
 	
 	@PostMapping
 	public ResponseEntity<ProductDTO> postProducts (@Valid @RequestBody ProductDTO productDtoRequest) {
