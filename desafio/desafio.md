@@ -1,5 +1,3 @@
-![Logo Compasso](https://compasso.com.br/wp-content/uploads/2020/07/LogoCompasso-Negativo.png)
-
 # Catálogo de produtos
 
 Sua tarefa é implementar um catálogo de produtos com Java e Spring Boot.
@@ -196,15 +194,3 @@ Retorno vazio:
 #### DELETE /products/\{id\}
 
 Esse endpoint deve deletar um registro de produto na base de dados. Caso encontre o produto filtrando pelo _id_ então deve deletar e retornar um HTTP 200. Se o _id_ passado não foi localizado deve retornar um HTTP 404
-
-## Validação
-
-A validação dos endpoints e sua correta funcionalidade será através de script automatizado. Logo, é importante que você defina a porta do serviço como sendo 9999, ficando a base url então: http://localhost:9999
-
-Também ocorrerá avaliação técnica do código-fonte produzido, bem como eventual análise estática do mesmo.
-
-## Entrega do código
-
-Você é responsável por entregar o código da forma como achar mais adequado, bem como eventuais documentações necessárias para a execução do seu microserviço.
-
-### Bom desafio \m/
