@@ -27,7 +27,7 @@ Desafio: [click](/desafio/desafio.md)
 :ballot_box_with_check: Devtools
 :ballot_box_with_check: Jacoco
 
-## RODANDO A APLICAÇÃO
+:## RODANDO A APLICAÇÃO:
 
 ### OPÇÃO 1 - Rodar projeto utilizando o maven:
 
