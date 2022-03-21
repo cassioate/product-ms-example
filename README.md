@@ -27,82 +27,82 @@ Desafio: [click](/desafio/desafio.md)
 :ballot_box_with_check: Devtools
 :ballot_box_with_check: Jacoco
 
-## :RODANDO A APLICAÇÃO:
+## RODANDO A APLICAÇÃO
 
-### OPÇÃO 1 - Rodar projeto utilizando o maven:
+- ### OPÇÃO 1 - Rodar projeto utilizando o maven:
 
-Abra um terminal na pasta raiz do projeto e utilize:
+  Abra um terminal na pasta raiz do projeto e utilize:
 
-```shell
-mvn clean package spring-boot:run -Dmaven.test.skip=true
-```
+  ```shell
+  mvn clean package spring-boot:run -Dmaven.test.skip=true
+  ```
 
-### OPÇÃO 2 - Rodar projeto via IDE:
+- ### OPÇÃO 2 - Rodar projeto via IDE:
 
-Siga os passos nas imagens(A sua IDE possivelmente será diferente, mas a logica por trás será a mesma):
+  Siga os passos nas imagens(A sua IDE possivelmente será diferente, mas a logica por trás será a mesma):
 
-Clique em Maven Build
+  Clique em Maven Build
 
-![clean-install](/desafio/assets/clean-install.png)
+  ![clean-install](/desafio/assets/clean-install.png)
 
-Insira o seguinte: "clean package spring-boot:run -Dmaven.test.skip=true" e depois aperte em run
+  Insira o seguinte: "clean package spring-boot:run -Dmaven.test.skip=true" e depois aperte em run
 
-![clean-install](/desafio/assets/clean-install-2.png)
+  ![clean-install](/desafio/assets/clean-install-2.png)
 
-Agora é só esperar a aplicação subir.
+  Agora é só esperar a aplicação subir.
 
-### Acessar Swagger:
+- ### Acessar Swagger:
 
-após iniciar o projeto entre no link:
+  após iniciar o projeto entre no link:
 
-http://localhost:9999/swagger-ui/
+  http://localhost:9999/swagger-ui/
 
-![Swagger-img](/desafio/assets/Swagger.png)
+  ![Swagger-img](/desafio/assets/Swagger.png)
 
-## :TESTANDO A APLICAÇÃO:
+## TESTANDO A APLICAÇÃO
 
 - ### OPÇÃO 1 - Rodar os testes do projeto utilizando o maven:
 
-Abra um terminal na pasta raiz do projeto e utilize:
+  Abra um terminal na pasta raiz do projeto e utilize:
 
-```shell
-mvn clean test
-```
+  ```shell
+  mvn clean test
+  ```
 
 - ### OPÇÃO 2 - Rodar os testes do projeto via IDE:
 
-Siga os passos nas imagens(A sua IDE possivelmente será diferente, mas a logica por trás será a mesma):
+  Siga os passos nas imagens(A sua IDE possivelmente será diferente, mas a logica por trás será a mesma):
 
-Clique em Maven Build
+  Clique em Maven Build
 
-![test-1](/desafio/assets/test3.png)
+  ![test-1](/desafio/assets/test3.png)
 
-Insira o seguinte: "clean test" e depois aperte em run
+  Insira o seguinte: "clean test" e depois aperte em run
 
-![test-2](/desafio/assets/test4.png)
+  ![test-2](/desafio/assets/test4.png)
 
-### Verificar cobertura dos testes:
+- ### Verificar cobertura dos testes:
 
-Para garantir que esta tudo ok, execute os seguintes passos antes:
+  Para garantir que esta tudo ok, execute os seguintes passos antes:
 
-Clique em Maven Build
+  Clique em Maven Build
 
-![clean-install](/desafio/assets/clean-install.png)
+  ![clean-install](/desafio/assets/clean-install.png)
 
-Insira o seguinte: "clean install" e depois aperte em run
+  Insira o seguinte: "clean install" e depois aperte em run
 
-![clean-install](/desafio/assets/clean-install-3.png)
+  ![clean-install](/desafio/assets/clean-install-3.png)
 
-Procure o arquivo index.html mostrado na imagem abaixo
+  Procure o arquivo index.html mostrado na imagem abaixo
 
-![test-jacoco-1](/desafio/assets/test-jacoco-1.png)
+  ![test-jacoco-1](/desafio/assets/test-jacoco-1.png)
 
-Com o botão direito do mouse no arquivo index.html clique em open-with e depois clique em web-browser
+  Com o botão direito do mouse no arquivo index.html clique em open-with e depois clique em web-browser
 
-![test-jacoco-1](/desafio/assets/test-jacoco-2.png)
+  ![test-jacoco-1](/desafio/assets/test-jacoco-2.png)
 
-Agora você pode verificar a cobertura do teste
+  Agora você pode verificar a cobertura do teste
 
-![test-jacoco-3](/desafio/assets/test-jacoco-3.png)
+  ![test-jacoco-3](/desafio/assets/test-jacoco-3.png)
 
-##### OBS: esse foi um metodo utilizado para poder acompanhar a cobertura dos testes em um ambiente de desenvolvimento local, mas existem opções melhores para se verificar isso, como por exemplo o sonar do jenkins
+  ###### OBS: esse foi um metodo utilizado para poder acompanhar a cobertura dos testes em um ambiente de desenvolvimento local, mas existem opções melhores para se verificar isso, como por exemplo o sonar do jenkins
