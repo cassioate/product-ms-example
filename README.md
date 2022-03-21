@@ -6,7 +6,7 @@
 
 ## Requisitos do Projeto:
 
-Desafio: [desafio](desafio\)
+Desafio: [desafio](/desafio/desafio.md)
 
 - Porta do projeto: 9999
 
