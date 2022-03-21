@@ -107,9 +107,9 @@ Desafio: [click](/desafio/desafio.md)
 
   ###### OBS: esse foi um metodo utilizado para poder acompanhar a cobertura dos testes em um ambiente de desenvolvimento local, mas existem opções melhores para se verificar isso, como por exemplo o sonar do jenkins
 
-## UTILIZANDO DOCKER
+## UTILIZANDO DOCKER:
 
-    Requisitos: `docker` e `docker-compose`.
+Requisitos: `docker` e `docker-compose`.
 
     Com docker rodando, execute o comando na pasta raiz do projeto:
 
