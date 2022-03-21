@@ -72,7 +72,7 @@ public class ProductsController {
 			@RequestParam(required = false, value = "max_price") BigDecimal maxPrice,
 			@RequestParam(required = false, value = "q") String q) {
 		logger.info("CONTROLLER - Using the getFilterProducts method");
-		List<ProductDTO> productResponse = productsService.getFilterProducts(minPrice, maxPrice, q);
+		List<ProductDTO> productResponse = productsService.getFilterProducts(q, minPrice, maxPrice);
 		return ResponseEntity.status(HttpStatus.OK).body(productResponse);
 	}
 	

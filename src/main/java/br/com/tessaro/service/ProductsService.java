@@ -13,10 +13,10 @@ public interface ProductsService {
 	
 	public List<ProductDTO> getAllProducts();
 	
-	public List<ProductDTO> getFilterProducts(BigDecimal minPrice, BigDecimal maxPrice, String q);
+	public List<ProductDTO> getFilterProducts(String q, BigDecimal minPrice, BigDecimal maxPrice);
 	
 	public ProductDTO getProductById(String id);
 	
 	public void deleteProductById(String id);
-	
+
 }

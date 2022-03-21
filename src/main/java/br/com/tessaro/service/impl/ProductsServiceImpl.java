@@ -60,7 +60,7 @@ public class ProductsServiceImpl implements ProductsService{
 	}
 
 	@Override
-	public List<ProductDTO> getFilterProducts(BigDecimal minPrice, BigDecimal maxPrice, String q) {
+	public List<ProductDTO> getFilterProducts(String q, BigDecimal minPrice, BigDecimal maxPrice) {
 		logger.info("SERVICE - Using the getFilterProducts method");
 		List<ProductDTO> productsDtoList = new ArrayList<>();
 		List<Product> products = productsCustomRepository.findProductsByFilter(q, minPrice, maxPrice);
@@ -116,4 +116,6 @@ public class ProductsServiceImpl implements ProductsService{
 			throw new NotFindProductByIdException();
 		}
 	}
+
+
 }
