@@ -42,3 +42,13 @@ Abra um terminal na pasta raiz do projeto e utilize:
 ```shell
 mvn clean package spring-boot:run -Dmaven.test.skip=true
 ```
+
+## Rodar projeto via IDE:
+
+Siga os passos nas imagens:
+
+Clique em Maven Build
+![clean-install](/desafio/assets/clean-install.png)
+
+Insira o seguinte: clean package spring-boot:run -Dmaven.test.skip=true e depois aperte em run
+![clean-install](/desafio/assets/clean-install-2.png)
