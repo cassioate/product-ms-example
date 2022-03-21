@@ -61,7 +61,7 @@ http://localhost:9999/swagger-ui/
 
 ## :TESTANDO A APLICAÇÃO:
 
-### OPÇÃO 1 - Rodar os testes do projeto utilizando o maven:
+- ### OPÇÃO 1 - Rodar os testes do projeto utilizando o maven:
 
 Abra um terminal na pasta raiz do projeto e utilize:
 
@@ -69,7 +69,7 @@ Abra um terminal na pasta raiz do projeto e utilize:
 mvn clean test
 ```
 
-### OPÇÃO 2 - Rodar os testes do projeto via IDE:
+- ### OPÇÃO 2 - Rodar os testes do projeto via IDE:
 
 Siga os passos nas imagens(A sua IDE possivelmente será diferente, mas a logica por trás será a mesma):
 
