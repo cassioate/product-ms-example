@@ -6,7 +6,7 @@
 
 ## Requisitos do Projeto:
 
-![desafio](desafio\desafio.md)
+Desafio: ![desafio](desafio\)
 
 - Porta do projeto: 9999
 
@@ -14,4 +14,4 @@
 
 após iniciar o projeto entre no link:
 
-http://localhost:9999/swagger-ui.html
+http://localhost:9999/swagger-ui/
