@@ -18,11 +18,18 @@ http://localhost:9999/swagger-ui/
 
 ![Swagger-img](/desafio/assets/Swagger.png)
 
-## Tecnologias:
+## Tecnologias/Dependências:
 
 :ballot_box_with_check: Java 11
 :ballot_box_with_check: Spring Boot
 :ballot_box_with_check: JPA
+:ballot_box_with_check: Data-Cache
+:ballot_box_with_check: Lombok
+:ballot_box_with_check: Validation
 :ballot_box_with_check: Swagger
 :ballot_box_with_check: Docker
 :ballot_box_with_check: Junit/Mockito/MockMvc
+:ballot_box_with_check: PostgreSQL
+:ballot_box_with_check: H2
+:ballot_box_with_check: Devtools
+:ballot_box_with_check: Jacoco
