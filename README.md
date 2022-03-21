@@ -4,13 +4,13 @@
 
 #### Autor: Cássio Aragão Tessaro | [LinkedIn](https://www.linkedin.com/in/ctessaro/)
 
-## Requisitos do Projeto:
+### Requisitos do Projeto:
 
 Desafio: [click](/desafio/desafio.md)
 
 - Porta do projeto: 9999
 
-## Tecnologias/Dependências:
+### Tecnologias/Dependências:
 
 :ballot_box_with_check: Java 11
 :ballot_box_with_check: Spring Boot
@@ -27,7 +27,7 @@ Desafio: [click](/desafio/desafio.md)
 :ballot_box_with_check: Devtools
 :ballot_box_with_check: Jacoco
 
-## OPÇÃO 1 - Rodar projeto utilizando o maven:
+### OPÇÃO 1 - Rodar projeto utilizando o maven:
 
 Abra um terminal na pasta raiz do projeto e utilize:
 
@@ -35,7 +35,7 @@ Abra um terminal na pasta raiz do projeto e utilize:
 mvn clean package spring-boot:run -Dmaven.test.skip=true
 ```
 
-## OPÇÃO 2 - Rodar projeto via IDE:
+### OPÇÃO 2 - Rodar projeto via IDE:
 
 Siga os passos nas imagens(A sua IDE possivelmente será diferente, mas a logica por trás será a mesma):
 
@@ -47,7 +47,7 @@ Insira o seguinte: "clean package spring-boot:run -Dmaven.test.skip=true" e depo
 
 Agora é só esperar a aplicação subir.
 
-## Acessar Swagger:
+### Acessar Swagger:
 
 após iniciar o projeto entre no link:
 
@@ -55,7 +55,7 @@ http://localhost:9999/swagger-ui/
 
 ![Swagger-img](/desafio/assets/Swagger.png)
 
-## OPÇÃO 1 - Rodar os testes do projeto utilizando o maven:
+### OPÇÃO 1 - Rodar os testes do projeto utilizando o maven:
 
 Abra um terminal na pasta raiz do projeto e utilize:
 
@@ -63,7 +63,7 @@ Abra um terminal na pasta raiz do projeto e utilize:
 mvn clean test
 ```
 
-## OPÇÃO 2 - Rodar os testes do projeto via IDE:
+### OPÇÃO 2 - Rodar os testes do projeto via IDE:
 
 Siga os passos nas imagens(A sua IDE possivelmente será diferente, mas a logica por trás será a mesma):
 
