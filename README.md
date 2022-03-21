@@ -42,9 +42,11 @@ mvn clean package spring-boot:run -Dmaven.test.skip=true
 Siga os passos nas imagens(A sua IDE possivelmente será diferente, mas a logica por trás será a mesma):
 
 Clique em Maven Build
+
 ![clean-install](/desafio/assets/clean-install.png)
 
 Insira o seguinte: "clean package spring-boot:run -Dmaven.test.skip=true" e depois aperte em run
+
 ![clean-install](/desafio/assets/clean-install-2.png)
 
 Agora é só esperar a aplicação subir.
@@ -72,9 +74,11 @@ mvn clean test
 Siga os passos nas imagens(A sua IDE possivelmente será diferente, mas a logica por trás será a mesma):
 
 Clique em Maven Build
+
 ![test-1](/desafio/assets/test3.png)
 
 Insira o seguinte: "clean test" e depois aperte em run
+
 ![test-2](/desafio/assets/test4.png)
 
 ### Verificar cobertura dos testes:
@@ -82,18 +86,23 @@ Insira o seguinte: "clean test" e depois aperte em run
 Para garantir que esta tudo ok, execute os seguintes passos antes:
 
 Clique em Maven Build
+
 ![clean-install](/desafio/assets/clean-install.png)
 
 Insira o seguinte: "clean install" e depois aperte em run
+
 ![clean-install](/desafio/assets/clean-install-3.png)
 
 Procure o arquivo index.html mostrado na imagem abaixo
+
 ![test-jacoco-1](/desafio/assets/test-jacoco-1.png)
 
 Com o botão direito do mouse no arquivo index.html clique em open-with e depois clique em web-browser
+
 ![test-jacoco-1](/desafio/assets/test-jacoco-2.png)
 
 Agora você pode verificar a cobertura do teste
+
 ![test-jacoco-3](/desafio/assets/test-jacoco-3.png)
 
 ##### OBS: esse foi um metodo utilizado para poder acompanhar a cobertura dos testes em um ambiente de desenvolvimento local, mas existem opções melhores para se verificar isso, como por exemplo o sonar do jenkins
