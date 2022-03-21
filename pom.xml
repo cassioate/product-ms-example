@@ -89,6 +89,15 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.5</version>
+				<configuration>
+				    <excludes>
+			            <exclude>br/com/tessaro/**/exceptions/**</exclude>
+			            <exclude>br/com/tessaro/model/*</exclude>
+			            <exclude>br/com/tessaro/**/*DTO.*</exclude>
+			            <exclude>**/config/*</exclude>
+			       		<exclude>**/ProductMsApplication.class</exclude>
+			        </excludes>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>

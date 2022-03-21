@@ -50,6 +50,12 @@ public class ProductsControllerTest {
 	
 	@Test
 	@DisplayName("TEST - ProductsController - getFilterProducts()")
+	public void getFilterProductsTestWithoutAnyParam() throws Exception {
+		mockMvc.perform(get("/api/v1/products/search?")).andExpect(status().isOk());
+	}
+	
+	@Test
+	@DisplayName("TEST - ProductsController - getFilterProducts()")
 	public void getFilterProductsTest() throws Exception {
 		mockMvc.perform(get("/api/v1/products/search?q=teste1")).andExpect(status().isOk());
 	}
