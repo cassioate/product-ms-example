@@ -106,3 +106,19 @@ Desafio: [click](/desafio/desafio.md)
   ![test-jacoco-3](/desafio/assets/test-jacoco-3.png)
 
   ###### OBS: esse foi um metodo utilizado para poder acompanhar a cobertura dos testes em um ambiente de desenvolvimento local, mas existem opções melhores para se verificar isso, como por exemplo o sonar do jenkins
+
+## UTILIZANDO DOCKER
+
+    Requisitos: `docker` e `docker-compose`.
+
+    Com docker rodando, execute o comando na pasta raiz do projeto:
+
+    ```shell
+    mvn clean package -DskipTests && docker-compose up -d --build
+    ```
+
+    ## Finalizar container e remover volume/imagem/containers:
+
+    ```shell
+    docker-compose down -v --remove-orphans
+    ```
