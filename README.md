@@ -111,14 +111,14 @@ Desafio: [click](/desafio/desafio.md)
 
 Requisitos: `docker` e `docker-compose`.
 
-    Com docker rodando, execute o comando na pasta raiz do projeto:
+Com docker rodando, execute o comando na pasta raiz do projeto:
 
-        ```shell
-        mvn clean package -DskipTests && docker-compose up -d --build
-        ```
+    ```shell
+    mvn clean package -DskipTests && docker-compose up -d --build
+    ```
 
-    ## Finalizar container e remover volume/imagem/containers:
+## Finalizar container e remover volume/imagem/containers:
 
-        ```shell
-        docker-compose down -v --remove-orphans
-        ```
+    ```shell
+    docker-compose down -v --remove-orphans
+    ```
