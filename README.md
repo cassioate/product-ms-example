@@ -35,7 +35,7 @@ http://localhost:9999/swagger-ui/
 :ballot_box_with_check: Devtools
 :ballot_box_with_check: Jacoco
 
-## Rodar projeto utilizando o maven:
+## OPÇÃO 1 - Rodar projeto utilizando o maven:
 
 Abra um terminal na pasta raiz do projeto e utilize:
 
@@ -43,7 +43,7 @@ Abra um terminal na pasta raiz do projeto e utilize:
 mvn clean package spring-boot:run -Dmaven.test.skip=true
 ```
 
-## Rodar projeto via IDE:
+## OPÇÃO 2 - Rodar projeto via IDE:
 
 Siga os passos nas imagens:
 
@@ -52,3 +52,5 @@ Clique em Maven Build
 
 Insira o seguinte: clean package spring-boot:run -Dmaven.test.skip=true e depois aperte em run
 ![clean-install](/desafio/assets/clean-install-2.png)
+
+Agora é só esperar a aplicação subir.
