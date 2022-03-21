@@ -27,6 +27,8 @@ Desafio: [click](/desafio/desafio.md)
 :ballot_box_with_check: Devtools
 :ballot_box_with_check: Jacoco
 
+## RODANDO A APLICAÇÃO
+
 ### OPÇÃO 1 - Rodar projeto utilizando o maven:
 
 Abra um terminal na pasta raiz do projeto e utilize:
@@ -54,6 +56,8 @@ após iniciar o projeto entre no link:
 http://localhost:9999/swagger-ui/
 
 ![Swagger-img](/desafio/assets/Swagger.png)
+
+## TESTANDO A APLICAÇÃO
 
 ### OPÇÃO 1 - Rodar os testes do projeto utilizando o maven:
 
