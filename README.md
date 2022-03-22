@@ -26,7 +26,7 @@ Desafio: [click](/desafio/desafio.md)
 :ballot_box_with_check: H2
 :ballot_box_with_check: Devtools
 :ballot_box_with_check: Jacoco
-:ballot_box_with_check: Flyway
+:ballot_box_with_check: Flywayg
 
 ## RODANDO A APLICAÇÃO
 
@@ -107,8 +107,6 @@ Desafio: [click](/desafio/desafio.md)
   Agora você pode verificar a cobertura do teste
 
   ![test-jacoco-3](/desafio/assets/test-jacoco-3.png)
-
-  ###### OBS: esse foi um metodo utilizado para poder acompanhar a cobertura dos testes em um ambiente de desenvolvimento local, mas existem opções melhores para se verificar isso, como por exemplo o sonar do jenkins
 
 ## UTILIZANDO DOCKER:
 
