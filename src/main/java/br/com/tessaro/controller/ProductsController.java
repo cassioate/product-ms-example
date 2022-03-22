@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -35,24 +36,6 @@ public class ProductsController {
 	@Autowired
 	private ProductsServiceImpl productsService;
 	
-	@PostMapping
-	@ApiOperation(value = "Adding a product")
-	@CacheEvict(value = "retrieveExcahngeValueCache", allEntries = true)
-	public ResponseEntity<ProductDTO> postProducts (@Valid @RequestBody ProductDTO productDtoRequest) {
-		logger.info("CONTROLLER - Using the postProduct method");
-		ProductDTO productResponse = productsService.postProduct(productDtoRequest);
-		return ResponseEntity.status(HttpStatus.CREATED).body(productResponse);
-	}
-	
-	@PutMapping("/{id}")
-	@ApiOperation(value = "Updating a product")
-	@CacheEvict(value = "retrieveExcahngeValueCache", allEntries = true)
-	public ResponseEntity<ProductDTO> putProducts (@PathVariable String id , @Valid @RequestBody ProductDTO productDto) {
-		logger.info("CONTROLLER - Using the putProducts method");
-		ProductDTO productResponse = productsService.putProduct(id, productDto);
-		return ResponseEntity.status(HttpStatus.CREATED).body(productResponse);
-	}
-	
 	@GetMapping
 	@ApiOperation(value = "List of all products")
 	@Cacheable(value="retrieveExcahngeValueCache")
@@ -60,6 +43,18 @@ public class ProductsController {
 		logger.info("CONTROLLER - Using the getAllProducts method");
 		List<ProductDTO> productResponse = productsService.getAllProducts();
 		return ResponseEntity.status(HttpStatus.OK).body(productResponse);
+	}
+	
+	@GetMapping("/page")
+	@ApiOperation(value = "List of all products with page")
+	@Cacheable(value="retrieveExcahngeValueCache")
+	public ResponseEntity<Page<ProductDTO>> findPage(
+			@RequestParam(value="page", defaultValue="0") Integer page, 
+			@RequestParam(value="linesPerPage", defaultValue="3") Integer linesPerPage, 
+			@RequestParam(value="orderBy", defaultValue="name") String orderBy, 
+			@RequestParam(value="direction", defaultValue="ASC") String direction) {
+		Page<ProductDTO> ProductListDto = productsService.getProductsWithPage(page, linesPerPage, orderBy, direction);
+		return ResponseEntity.status(HttpStatus.OK).body(ProductListDto);
 	}
 
 	@GetMapping("/{id}")
@@ -81,6 +76,24 @@ public class ProductsController {
 		logger.info("CONTROLLER - Using the getFilterProducts method");
 		List<ProductDTO> productResponse = productsService.getFilterProducts(q, minPrice, maxPrice);
 		return ResponseEntity.status(HttpStatus.OK).body(productResponse);
+	}
+	
+	@PostMapping
+	@ApiOperation(value = "Adding a product")
+	@CacheEvict(value = "retrieveExcahngeValueCache", allEntries = true)
+	public ResponseEntity<ProductDTO> postProducts (@Valid @RequestBody ProductDTO productDtoRequest) {
+		logger.info("CONTROLLER - Using the postProduct method");
+		ProductDTO productResponse = productsService.postProduct(productDtoRequest);
+		return ResponseEntity.status(HttpStatus.CREATED).body(productResponse);
+	}
+	
+	@PutMapping("/{id}")
+	@ApiOperation(value = "Updating a product")
+	@CacheEvict(value = "retrieveExcahngeValueCache", allEntries = true)
+	public ResponseEntity<ProductDTO> putProducts (@PathVariable String id , @Valid @RequestBody ProductDTO productDto) {
+		logger.info("CONTROLLER - Using the putProducts method");
+		ProductDTO productResponse = productsService.putProduct(id, productDto);
+		return ResponseEntity.status(HttpStatus.CREATED).body(productResponse);
 	}
 	
 	@DeleteMapping("/{id}")

@@ -49,7 +49,7 @@ public class ProductsCustomRepository {
 		if (maxPrice != null) {
 			entityManagerQuery.setParameter("maxPrice", maxPrice);
 		}
-		
+
 		return entityManagerQuery.getResultList();
 	}
 

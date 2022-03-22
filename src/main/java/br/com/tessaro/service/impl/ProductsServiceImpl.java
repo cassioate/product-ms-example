@@ -9,6 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import br.com.tessaro.exceptions.business.NotFindProductByIdException;
@@ -44,6 +47,18 @@ public class ProductsServiceImpl implements ProductsService{
 		});
 		
 		return productsDTOList;
+	}
+	
+	@Override
+	public Page<ProductDTO> getProductsWithPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
+		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
+		Page<Product> productList = productRepository.findAll(pageRequest);
+		Page<ProductDTO> productListDto = productList.map(obj -> 
+															new ProductDTO(obj.getProductId(),
+																	obj.getName(),
+																	obj.getDescription(),
+																	obj.getPrice()));
+		return productListDto;
 	}
 	
 	@Override
@@ -116,6 +131,5 @@ public class ProductsServiceImpl implements ProductsService{
 			throw new NotFindProductByIdException();
 		}
 	}
-
 
 }

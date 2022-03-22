@@ -3,6 +3,8 @@ package br.com.tessaro.service;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+
 import br.com.tessaro.model.dto.ProductDTO;
 
 public interface ProductsService {
@@ -15,8 +17,11 @@ public interface ProductsService {
 	
 	public List<ProductDTO> getFilterProducts(String q, BigDecimal minPrice, BigDecimal maxPrice);
 	
+	public Page<ProductDTO> getProductsWithPage(Integer page, Integer linesPerPage, String orderBy, String direction);
+
 	public ProductDTO getProductById(String id);
 	
 	public void deleteProductById(String id);
+	
 
 }
