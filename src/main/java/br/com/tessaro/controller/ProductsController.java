@@ -8,6 +8,8 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,13 +34,8 @@ public class ProductsController {
 	@Autowired
 	private ProductsServiceImpl productsService;
 	
-//	private final ProductsServiceImpl productsService;
-//	
-//	public ProductsController(ProductsServiceImpl productsService) {
-//		this.productsService = productsService;
-//	}
-	
 	@PostMapping
+	@CacheEvict(value = "retrieveExcahngeValueCache", allEntries = true)
 	public ResponseEntity<ProductDTO> postProducts (@Valid @RequestBody ProductDTO productDtoRequest) {
 		logger.info("CONTROLLER - Using the postProduct method");
 		ProductDTO productResponse = productsService.postProduct(productDtoRequest);
@@ -46,6 +43,7 @@ public class ProductsController {
 	}
 	
 	@PutMapping("/{id}")
+	@CacheEvict(value = "retrieveExcahngeValueCache", allEntries = true)
 	public ResponseEntity<ProductDTO> putProducts (@PathVariable String id , @Valid @RequestBody ProductDTO productDto) {
 		logger.info("CONTROLLER - Using the putProducts method");
 		ProductDTO productResponse = productsService.putProduct(id, productDto);
@@ -53,6 +51,7 @@ public class ProductsController {
 	}
 	
 	@GetMapping
+	@Cacheable(value="retrieveExcahngeValueCache")
 	public ResponseEntity<List<ProductDTO>> getAllProducts () {
 		logger.info("CONTROLLER - Using the getAllProducts method");
 		List<ProductDTO> productResponse = productsService.getAllProducts();
@@ -60,6 +59,7 @@ public class ProductsController {
 	}
 
 	@GetMapping("/{id}")
+	@Cacheable(value="retrieveExcahngeValueCache")
 	public ResponseEntity<ProductDTO> getProductById (@PathVariable String id) {
 		logger.info("CONTROLLER - Using the getProductById method");
 		ProductDTO productResponse = productsService.getProductById(id);
@@ -67,6 +67,7 @@ public class ProductsController {
 	}
 	
 	@GetMapping("/search")
+	@Cacheable(value="retrieveExcahngeValueCache")
 	public ResponseEntity<List<ProductDTO>> getFilterProducts (
 			@RequestParam(required = false, value = "min_price") BigDecimal minPrice,
 			@RequestParam(required = false, value = "max_price") BigDecimal maxPrice,
@@ -77,6 +78,7 @@ public class ProductsController {
 	}
 	
 	@DeleteMapping("/{id}")
+	@CacheEvict(value = "retrieveExcahngeValueCache", allEntries = true)
 	public ResponseEntity<?> deleteProductById (@PathVariable String id) {
 		logger.info("CONTROLLER - Using the deleteProductById method");
 		productsService.deleteProductById(id);
