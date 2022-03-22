@@ -29,6 +29,8 @@ Desafio: [click](/desafio/desafio.md)
 
 ## RODANDO A APLICAÇÃO
 
+##### OBS: O Banco que será utilizado no ambiente local, será o H2 em memoria, no fim desse Readme estará a forma de utilizar o docker, e nele será utilizado o banco PostgreSQL.
+
 - ### OPÇÃO 1 - Rodar projeto utilizando o maven:
 
   Abra um terminal na pasta raiz do projeto e utilize:
@@ -122,3 +124,5 @@ mvn clean package -DskipTests && docker-compose up -d --build
 ```shell
 docker-compose down -v --remove-orphans
 ```
+
+##### OBS: Ao rodar com o docker, o perfil de ambiente que será utilizado será o de DEV, utilizando assim o banco PostgreSQL.
