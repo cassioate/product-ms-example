@@ -88,7 +88,7 @@ public class ProductsServiceImpl implements ProductsService{
 	@Override
 	public ProductDTO putProduct(String id, ProductDTO productDto) {
 		logger.info("SERVICE - Using the putProduct method");
-		
+		 
 		Optional<Product> productFind = productRepository.findById(id);
 		if (productFind.isPresent()) {
 			Product product = new Product();

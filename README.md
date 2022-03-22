@@ -109,9 +109,9 @@ Desafio: [click](/desafio/desafio.md)
 
 ## UTILIZANDO DOCKER:
 
-Requisitos: `docker` e `docker-compose`.
+Requisitos: `maven`, `docker` e `docker-compose`.
 
-Com docker rodando, execute o comando na pasta raiz do projeto:
+Com docker rodando, abra um terminal e execute o comando na pasta raiz do projeto:
 
 ```shell
 mvn clean package -DskipTests && docker-compose up -d --build

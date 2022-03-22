@@ -38,6 +38,15 @@ public class ProductsServiceImplTest {
 	@BeforeEach
 	public void setUp() {
 		 MockitoAnnotations.openMocks(this);
+		 Product product1 = new Product("teste1", "teste1", BigDecimal.valueOf(100));
+		 Product product2 = new Product("teste2", "teste2", BigDecimal.valueOf(200));
+		 Product product3 = new Product("teste3", "teste3", BigDecimal.valueOf(300));
+		 product1.setProductId("1");
+		 product2.setProductId("1");
+		 product3.setProductId("1");
+		 productRepository.save(product1);
+		 productRepository.save(product2);
+		 productRepository.save(product3);
 	}
 	
 	@Test

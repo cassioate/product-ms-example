@@ -13,12 +13,33 @@ services:
     mem_limit: 700m
     ports:
       - "9999:9999"
+    environment: 
+      spring.profiles.active: dev
+      spring.datasource.url: jdbc:postgresql://db:5432/product-ms
+      spring.datasource.username: postgres
+      spring.datasource.password: '123456'
     networks:
       - ms-networks
-    # depends_on:
-    #   rabbitmq:
-    #     condition: service_healthy
+    depends_on:
+      db:
+        condition: service_healthy
 
+  db:
+    container_name: db
+    image: postgres
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: '123456'
+      POSTGRES_DB: product-ms
+    ports: 
+    - "15432:5432"     
+    networks: 
+    - ms-networks
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 
 
