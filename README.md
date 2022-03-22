@@ -91,9 +91,9 @@ Desafio: [click](/desafio/desafio.md)
 
   ![clean-install](/desafio/assets/clean-install.png)
 
-  Insira o seguinte: "clean install" e depois aperte em run
+  Insira o seguinte: "clean test" e depois aperte em run
 
-  ![clean-install](/desafio/assets/clean-install-3.png)
+  ![test4](/desafio/assets/test4.png)
 
   Procure o arquivo index.html mostrado na imagem abaixo
 
