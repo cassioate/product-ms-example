@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.tessaro.model.dto.ProductDTO;
 import br.com.tessaro.service.impl.ProductsServiceImpl;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("api/v1/products")
@@ -35,6 +36,7 @@ public class ProductsController {
 	private ProductsServiceImpl productsService;
 	
 	@PostMapping
+	@ApiOperation(value = "Adding a product")
 	@CacheEvict(value = "retrieveExcahngeValueCache", allEntries = true)
 	public ResponseEntity<ProductDTO> postProducts (@Valid @RequestBody ProductDTO productDtoRequest) {
 		logger.info("CONTROLLER - Using the postProduct method");
@@ -43,6 +45,7 @@ public class ProductsController {
 	}
 	
 	@PutMapping("/{id}")
+	@ApiOperation(value = "Updating a product")
 	@CacheEvict(value = "retrieveExcahngeValueCache", allEntries = true)
 	public ResponseEntity<ProductDTO> putProducts (@PathVariable String id , @Valid @RequestBody ProductDTO productDto) {
 		logger.info("CONTROLLER - Using the putProducts method");
@@ -51,6 +54,7 @@ public class ProductsController {
 	}
 	
 	@GetMapping
+	@ApiOperation(value = "List of all products")
 	@Cacheable(value="retrieveExcahngeValueCache")
 	public ResponseEntity<List<ProductDTO>> getAllProducts () {
 		logger.info("CONTROLLER - Using the getAllProducts method");
@@ -59,6 +63,7 @@ public class ProductsController {
 	}
 
 	@GetMapping("/{id}")
+	@ApiOperation(value = "Details of a product")
 	@Cacheable(value="retrieveExcahngeValueCache")
 	public ResponseEntity<ProductDTO> getProductById (@PathVariable String id) {
 		logger.info("CONTROLLER - Using the getProductById method");
@@ -67,6 +72,7 @@ public class ProductsController {
 	}
 	
 	@GetMapping("/search")
+	@ApiOperation(value = "List of all products in the filter range")
 	@Cacheable(value="retrieveExcahngeValueCache")
 	public ResponseEntity<List<ProductDTO>> getFilterProducts (
 			@RequestParam(required = false, value = "min_price") BigDecimal minPrice,
@@ -78,6 +84,7 @@ public class ProductsController {
 	}
 	
 	@DeleteMapping("/{id}")
+	@ApiOperation(value = "Removing a product")
 	@CacheEvict(value = "retrieveExcahngeValueCache", allEntries = true)
 	public ResponseEntity<?> deleteProductById (@PathVariable String id) {
 		logger.info("CONTROLLER - Using the deleteProductById method");
