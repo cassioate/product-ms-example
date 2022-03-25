@@ -42,7 +42,8 @@ public class ProductsController {
 	public ResponseEntity<List<ProductDTO>> getAllProducts () {
 		logger.info("CONTROLLER - Using the getAllProducts method");
 		List<ProductDTO> productResponse = productsService.getAllProducts();
-		return ResponseEntity.status(HttpStatus.OK).body(productResponse);
+		// I make this in the other way, only for study propose.
+		return new ResponseEntity<>(productResponse, HttpStatus.OK);
 	}
 	
 	@GetMapping("/page")
@@ -53,6 +54,7 @@ public class ProductsController {
 			@RequestParam(value="linesPerPage", defaultValue="3") Integer linesPerPage, 
 			@RequestParam(value="orderBy", defaultValue="name") String orderBy, 
 			@RequestParam(value="direction", defaultValue="ASC") String direction) {
+		logger.info("CONTROLLER - Using the findPage method");
 		Page<ProductDTO> ProductListDto = productsService.getProductsWithPage(page, linesPerPage, orderBy, direction);
 		return ResponseEntity.status(HttpStatus.OK).body(ProductListDto);
 	}
