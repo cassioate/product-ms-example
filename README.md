@@ -26,7 +26,7 @@ Desafio: [click](/desafio/desafio.md)
 :ballot_box_with_check: H2
 :ballot_box_with_check: Devtools
 :ballot_box_with_check: Jacoco
-:ballot_box_with_check: Flywayg
+:ballot_box_with_check: Flyway
 
 ## RODANDO A APLICAÇÃO
 
