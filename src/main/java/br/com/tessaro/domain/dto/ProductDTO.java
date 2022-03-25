@@ -1,4 +1,4 @@
-package br.com.tessaro.model.dto;
+package br.com.tessaro.domain.dto;
 
 import java.math.BigDecimal;
 
@@ -16,13 +16,13 @@ public class ProductDTO {
 	
 	private String productId;
 	
-	@NotEmpty
+	@NotEmpty(message="You forgot to fill a field name.")
 	private String name;
 	
-	@NotEmpty 
+	@NotEmpty(message="You forgot to fill a field description.")
 	private String description;
 	
-	@NotNull
+	@NotNull(message="You forgot to fill a field price.")
 	private BigDecimal price;
 
 	public ProductDTO(String productId, String name, String description, BigDecimal price) {

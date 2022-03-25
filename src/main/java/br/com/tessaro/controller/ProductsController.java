@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.tessaro.model.dto.ProductDTO;
+import br.com.tessaro.domain.dto.ProductDTO;
 import br.com.tessaro.service.impl.ProductsServiceImpl;
 import io.swagger.annotations.ApiOperation;
 

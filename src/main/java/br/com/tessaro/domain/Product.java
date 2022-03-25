@@ -1,4 +1,4 @@
-package br.com.tessaro.model;
+package br.com.tessaro.domain;
 
 import java.math.BigDecimal;
 

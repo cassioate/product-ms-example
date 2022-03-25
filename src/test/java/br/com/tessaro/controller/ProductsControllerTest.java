@@ -21,7 +21,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.com.tessaro.model.Product;
+import br.com.tessaro.domain.Product;
 import br.com.tessaro.repository.ProductsRepository;
 
 @SpringBootTest

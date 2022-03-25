@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 
-import br.com.tessaro.model.dto.ProductDTO;
+import br.com.tessaro.domain.dto.ProductDTO;
 
 public interface ProductsService {
 	

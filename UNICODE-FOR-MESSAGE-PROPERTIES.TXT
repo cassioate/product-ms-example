@@ -1,0 +1,2 @@
+Site para covnerter unicode:
+https://r12a.github.io/app-conversion/

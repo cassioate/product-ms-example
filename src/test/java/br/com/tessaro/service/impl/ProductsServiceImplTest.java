@@ -19,8 +19,8 @@ import org.mockito.MockitoAnnotations;
 
 import br.com.tessaro.exceptions.business.NotFindProductByIdException;
 import br.com.tessaro.exceptions.business.NotPossibleMakeTheUpdateException;
-import br.com.tessaro.model.Product;
-import br.com.tessaro.model.dto.ProductDTO;
+import br.com.tessaro.domain.Product;
+import br.com.tessaro.domain.dto.ProductDTO;
 import br.com.tessaro.repository.ProductsRepository;
 import br.com.tessaro.repository.custom.ProductsCustomRepository;
 

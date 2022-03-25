@@ -1,69 +1,59 @@
 package br.com.tessaro.exceptions;
 
-import javax.validation.ValidationException;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import br.com.tessaro.exceptions.business.NotFindProductByIdException;
 import br.com.tessaro.exceptions.business.NotPossibleMakeTheUpdateException;
+import org.springframework.web.context.request.WebRequest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @ControllerAdvice
 public class ProductsExceptionHandler {
+
+	@Autowired
+	private MessageSource messageSource;
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
-	public final ResponseEntity<ErrorResponse> handleBadRequestArgument (MethodArgumentNotValidException ex) {
-		ErrorResponse error = new ErrorResponse(400, "Bad Request: Invalid fields");
-		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
-	}
-
-	@ExceptionHandler(ValidationException.class)
-	public final ResponseEntity<ErrorResponse> handleBadRequestArgument (ValidationException ex) {
-		ErrorResponse error = new ErrorResponse(400, "Bad Request: You forgot to fill a field");
-		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+	public final ResponseEntity<List<ErrorResponse>> handleBadRequestArgument (MethodArgumentNotValidException ex) {
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+				.body(errosValidator(ex.getBindingResult(), 400));
 	}
 
 	@ExceptionHandler(HttpMessageNotReadableException.class)
 	public final ResponseEntity<ErrorResponse> handleBadRequestArgument (HttpMessageNotReadableException ex) {
-		ErrorResponse error = new ErrorResponse(400, "Bad Request: One or more fields are filled in incorrectly");
-		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+				.body(new ErrorResponse(400, messageSource.getMessage("fields.incorrectly", null, LocaleContextHolder.getLocale())));
 	}
 	
 	@ExceptionHandler(NotPossibleMakeTheUpdateException.class)
 	public final ResponseEntity<ErrorResponse> handleBadRequestArgument (NotPossibleMakeTheUpdateException ex) {
-		ErrorResponse error = new ErrorResponse(404, "Not Found: Can't find any product with this ID");
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+		return ResponseEntity.status(HttpStatus.NOT_FOUND)
+				.body(new ErrorResponse(404, messageSource.getMessage("cant.find.product", null, LocaleContextHolder.getLocale())));
 	}
 
 	@ExceptionHandler(NotFindProductByIdException.class)
 	public final ResponseEntity<ErrorResponse> handleBadRequestArgument (NotFindProductByIdException ex) {
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		return ResponseEntity.status(HttpStatus.NOT_FOUND)
+				.build();
+	}
+
+	public List<ErrorResponse> errosValidator (BindingResult ex, Integer status) {
+		List<ErrorResponse> error = new ArrayList<>();
+		for (ObjectError err: ex.getAllErrors()) {
+			error.add(new ErrorResponse(status, err.getDefaultMessage()));
+		}
+		return error;
 	}
 }
-//
-//@ControllerAdvice
-//public class ProductsExceptionHandler {
-//	
-//	@ExceptionHandler(MethodArgumentNotValidException.class)
-//	public final ResponseEntity<ErrorResponse> handleBadRequestArgument (MethodArgumentNotValidException ex) {
-//		ErrorResponse error = new ErrorResponse(400, "Bad Request: Invalid fields" , ex.getMessage());
-//		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
-//	}
-//
-//	@ExceptionHandler(ValidationException.class)
-//	public final ResponseEntity<ErrorResponse> handleBadRequestArgument (ValidationException ex) {
-//		ErrorResponse error = new ErrorResponse(400, "Bad Request: You forgot to fill a field" , ex.getMessage());
-//		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
-//	}
-//
-//	@ExceptionHandler(HttpMessageNotReadableException.class)
-//	public final ResponseEntity<ErrorResponse> handleBadRequestArgument (HttpMessageNotReadableException ex) {
-//		ErrorResponse error = new ErrorResponse(400, "Bad Request: One or more fields are filled in incorrectly" , ex.getMessage());
-//		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
-//	}
-//	
-//}
