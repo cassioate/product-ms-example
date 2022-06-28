@@ -1,6 +1,6 @@
 # product-ms
 
-# Catálogo de Produtos API Rest - Java Spring - DESAFIO ANTIGO PARA FINS DE APRENDIZADO.
+# Catálogo de Produtos API Rest - Java Spring
 
 #### Autor: Cássio Aragão Tessaro | [LinkedIn](https://www.linkedin.com/in/ctessaro/)
 
